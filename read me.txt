@@ -21,7 +21,7 @@ Step 3:
 
 Step 4:
     Install project dependencies for client
-    cd Client/
+    cd client/
     npm i
     npm run build 
 
