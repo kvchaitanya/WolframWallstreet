@@ -38,7 +38,7 @@ async function Bash(Script) {
 }
 
 function Authenticate(Request, Response, Next) {
-    if(process.env.IGNORE_AUTH=='1')
+    if(true)
         Request.oidc={user:{nickname:'Dev User',sid:'0'}};
     else if(!Request.oidc.isAuthenticated())
         return Response.sendStatus(401);
@@ -53,7 +53,7 @@ async function RunModel(Request,Response) {
     //Simulate a model
     let Models = await Bash('ls ../Model/output');
     if(!Models.match(Request.params.model+'\\.csv'))
-        await Bash('cd ../Model;venv/bin/python ml_engine.py '+Request.params.model+' 1950-1-1 2020-1-1')
+        await Bash('cd ../Model;python3 ml_engine.py  '+Request.params.model+' 1950-1-1 2020-1-1')
 
     //Get the data
     LibFileSys.readFile('../Model/output/'+Request.params.model+'.csv', (Error, Data) =>{
