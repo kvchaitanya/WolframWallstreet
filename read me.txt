@@ -1,0 +1,38 @@
+To run the model in local environment -
+
+Step 0:
+    Clone the repo
+
+Step 1 : 
+    create a virtual environment inside the repo - 
+        python3 -m venv myenv
+        source myenv/bin/activate
+
+Step 2 :
+    Install all python dependencies from python file -
+        cd Model
+        pip install -r requirements.txt
+
+Step 3:
+    Install project dependencies for website
+    cd ..
+    cd Website/
+    npm i
+
+Step 4:
+    Install project dependencies for client
+    cd Client/
+    npm i
+    npm run build 
+
+Step 5:
+    run the application in your local host
+    cd ..
+    PORT=6969 node .
+
+Step 6:
+    Test the model !!!!!
+    go to your browser and type http://localhost:6969/
+    Give stock ticker names and wait for model to generate results
+
+
